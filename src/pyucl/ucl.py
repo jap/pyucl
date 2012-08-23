@@ -115,7 +115,7 @@ def _ucl_compress(algo, data, level=1, callback=None):
     if retval:
         raise RuntimeError("Compression failed: %d (%s)" % (retval,
                            ucl_errors[retval]))
-    return ffi.buffer(outbuf)[:outbuflen[0]]
+    return ffi.buffer(outbuf, outbuflen[0])[:]
 
 def nrv2b_99_compress(data, level=1, callback=None):
     return _ucl_compress(C.ucl_nrv2b_99_compress, data, level, callback)
@@ -136,7 +136,7 @@ def _ucl_decompress(algo, data, outsize):
     if retval:
         raise RuntimeError("Decompression failed: %d (%s)" % (retval,
                            ucl_errors[retval]))
-    return ffi.buffer(outbuf)[:outbuflen[0]]
+    return ffi.buffer(outbuf, outbuflen[0])[:]
 
 def nrv2b_decompress(data, outsize):
     return _ucl_decompress(C.ucl_nrv2b_decompress_safe_8, data, outsize)
