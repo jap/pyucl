@@ -3,7 +3,7 @@ pyucl
 
 This is a very simple python wrapper for ucl
 (http://www.oberhumer.com/opensource/ucl/) using cffi.  Note that it
-has been written for cffi 0.2.1, and doesn't really work hard to be
+has been written for cffi 0.3, and doesn't really work hard to be
 efficient.
 
 Use it as follows::
