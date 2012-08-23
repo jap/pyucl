@@ -12,14 +12,14 @@ Use it as follows::
 
   >>> @ucl.callback
   ... def a_callback(n0, n1, n, v):
-  ...     print "CALLBACK GOT CALLED: %r %r %r" % (n0, n1, n)
+  ...     print "CALLBACK GOT CALLED: %d %d %d" % (n0, n1, n)
 
   >>> string_in = "henkitsminehenkhenkhenkitsmine"
   >>> string_out = ucl.nrv2d_99_compress(string_in,
   ...                                level=10, callback=a_callback)
-  CALLBACK GOT CALLED: 0L 0L -1
-  CALLBACK GOT CALLED: 1L 0L 3
-  CALLBACK GOT CALLED: 30L 24L 4
+  CALLBACK GOT CALLED: 0 0 -1
+  CALLBACK GOT CALLED: 1 0 3
+  CALLBACK GOT CALLED: 30 24 4
 
   >>> print len(string_in), len(string_out)
   30 24
