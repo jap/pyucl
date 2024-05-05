@@ -1,13 +1,32 @@
-pyucl
-=====
+# pyucl
 
 This is a very simple python wrapper for ucl
 (http://www.oberhumer.com/opensource/ucl/) using cffi.  Note that it
 has been written for cffi 0.3, and doesn't really work hard to be
 efficient.
 
-Use it as follows::
+## Dependencies
+Before running, make sure to have ucl installed on your system.
 
+| OS        | package name      |
+| ----------| ----------------- |
+| Fedora 39 | ucl-devel         |
+| Alpine 3  | ucl-dev           |
+| Debian 12 | libucl-dev        |
+
+## Install
+```sh
+  python -m venv .venv
+  source .venv/bin/activate
+
+  pip install -r requirements.txt
+  
+  python -m pip install .
+```
+
+## Use
+
+```sh
   >>> from pyucl import ucl
 
   >>> @ucl.callback
@@ -38,6 +57,5 @@ Use it as follows::
   Traceback (most recent call last):
   ...
   RuntimeError: Decompression failed: -203 (UCL_E_LOOKBEHIND_OVERRUN)
-
-Before running, make sure to have ucl installed on your system.
+```
 
